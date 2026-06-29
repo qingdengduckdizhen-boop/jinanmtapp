@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泉途 自动下载</title>
+    <script>
+        // 页面加载完成立刻触发下载
+        window.onload = function() {
+            const a = document.createElement('a');
+            a.href = './泉途_0.0.2.apk';
+            a.download = '泉途_0.0.2.apk';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            // 提示文字
+            document.getElementById('tip').innerText = '下载已自动开始 如未弹出请刷新页面';
+        }
+    </script>
+    <style>
+        *{margin:0;padding:0;font-family:HarmonyOS Sans SC,sans-serif;background:#111;color:#fff;text-align:center}
+        body{height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px}
+        h1{font-weight:700;font-size:28px}
+        #tip{font-size:16px;color:#ccc}
+    </style>
+</head>
+<body>
+    <h1>泉途 APP 自动下载</h1>
+    <div id="tip">正在自动拉取安装包</div>
+</body>
+</html>
